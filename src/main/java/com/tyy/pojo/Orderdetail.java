@@ -2,12 +2,19 @@ package com.tyy.pojo;
 
 public class Orderdetail {
     private Integer id;
-
     private Integer ordersId;
-
     private Integer itemsId;
-
     private Integer itemsNum;
+
+    public Orderdetail() {
+    }
+
+    public Orderdetail(Integer id, Integer ordersId, Integer itemsId, Integer itemsNum) {
+        this.id = id;
+        this.ordersId = ordersId;
+        this.itemsId = itemsId;
+        this.itemsNum = itemsNum;
+    }
 
     public Integer getId() {
         return id;

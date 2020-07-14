@@ -1,24 +1,26 @@
 package com.tyy.pojo;
 
-import java.util.Date;
-import java.util.List;
+import java.sql.Timestamp;
 
+//订单
 public class Orders {
+
     private Integer id;
-
     private Integer userId;
-
+    private Timestamp createtime;
     private String number;
-
-    private Date createtime;
-
     private String note;
-    
-    //用户信息
-    private User user;
-    
-    //订单明细
-    private List<Orderdetail> orderdetails;
+
+    public Orders() {
+    }
+
+    public Orders(Integer id, Integer userId, Timestamp createtime, String number, String note) {
+        this.id = id;
+        this.userId = userId;
+        this.createtime = createtime;
+        this.number = number;
+        this.note = note;
+    }
 
     public Integer getId() {
         return id;
@@ -36,20 +38,20 @@ public class Orders {
         this.userId = userId;
     }
 
+    public Timestamp getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Timestamp createtime) {
+        this.createtime = createtime;
+    }
+
     public String getNumber() {
         return number;
     }
 
     public void setNumber(String number) {
-        this.number = number == null ? null : number.trim();
-    }
-
-    public Date getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+        this.number = number;
     }
 
     public String getNote() {
@@ -57,31 +59,17 @@ public class Orders {
     }
 
     public void setNote(String note) {
-        this.note = note == null ? null : note.trim();
+        this.note = note;
     }
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public List<Orderdetail> getOrderdetails() {
-		return orderdetails;
-	}
-
-	public void setOrderdetails(List<Orderdetail> orderdetails) {
-		this.orderdetails = orderdetails;
-	}
-
-	@Override
-	public String toString() {
-		return "Orders [id=" + id + ", userId=" + userId + ", number=" + number
-				+ ", createtime=" + createtime + ", note=" + note + ", user="
-				+ user + ", orderdetails=" + orderdetails + "]";
-	}
-    
-    
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", createtime=" + createtime +
+                ", number='" + number + '\'' +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }

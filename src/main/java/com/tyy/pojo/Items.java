@@ -1,19 +1,27 @@
 package com.tyy.pojo;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Items {
+
     private Integer id;
-
     private String name;
-
-    private Float price;
-
+    private Double price;
+    private String detail;
+    private Timestamp createtime;
     private String pic;
 
-    private Date createtime;
+    public Items() {
+    }
 
-    private String detail;
+    public Items(Integer id, String name, Double price, String detail, Timestamp createtime, String pic) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.detail = detail;
+        this.createtime = createtime;
+        this.pic = pic;
+    }
 
     public Integer getId() {
         return id;
@@ -28,31 +36,15 @@ public class Items {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
-    }
-
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic == null ? null : pic.trim();
-    }
-
-    public Date getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
     }
 
     public String getDetail() {
@@ -60,14 +52,34 @@ public class Items {
     }
 
     public void setDetail(String detail) {
-        this.detail = detail == null ? null : detail.trim();
+        this.detail = detail;
     }
 
-	@Override
-	public String toString() {
-		return "Items [id=" + id + ", name=" + name + ", price=" + price
-				+ ", pic=" + pic + ", createtime=" + createtime + ", detail="
-				+ detail + "]";
-	}
-    
+    public Timestamp getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Timestamp createtime) {
+        this.createtime = createtime;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    @Override
+    public String toString() {
+        return "Items{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", detail='" + detail + '\'' +
+                ", createtime=" + createtime +
+                ", pic='" + pic + '\'' +
+                '}';
+    }
 }

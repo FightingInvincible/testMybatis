@@ -2,13 +2,11 @@ package com.tyy.pojo;
 
 import java.util.List;
 
-public class QueryVo {
-	
+//查询关联类
+public class UserQueryVO {
 	private User user;
-	
 	//自定义用户扩展类
 	private UserCustom userCustom;
-	
 	//传递多个用户id
 	private List<Integer> ids;
 	
@@ -36,6 +34,12 @@ public class QueryVo {
 		this.ids = ids;
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "UserQueryVO{" +
+				"user=" + user +
+				", userCustom=" + userCustom +
+				", ids=" + ids +
+				'}';
+	}
 }
